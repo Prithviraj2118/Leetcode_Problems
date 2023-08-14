@@ -8,6 +8,6 @@ public:
             
             if(pq.size()>k) pq.pop();
         }
-        return -pq.top();
+        return -pq.top(); //Kth largest
     }
 };
