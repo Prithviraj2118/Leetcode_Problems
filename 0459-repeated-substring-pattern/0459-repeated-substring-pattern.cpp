@@ -8,8 +8,10 @@ public:
             temp2.clear();
             temp += s[i];
             temp2 = temp;
-            while(temp2.size() < s.size()){
-                temp2 += temp;
+            if(s.size()%temp.size()==0){
+                while(temp2.size() < s.size()){
+                    temp2 += temp;
+                }
             }
             if(temp2 == s) return true;
         }
