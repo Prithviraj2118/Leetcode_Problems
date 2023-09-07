@@ -9,6 +9,21 @@
  * };
  */
 
+ListNode* revList(ListNode* p1, ListNode* p2){
+    ListNode* prev=NULL;
+    ListNode* cur=p1;
+    ListNode* next;
+        
+    while(prev != p2){
+        next = cur->next;
+        cur->next=prev;
+            
+        prev=cur;
+        cur=next;
+    }
+    return cur;
+}
+
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int l, int r) {
@@ -41,20 +56,10 @@ public:
             cnt++;
         }
         
-        ListNode* prev=NULL;
-        ListNode* cur=p1;
-        ListNode* next;
-        
-        while(prev != p2){
-            next = cur->next;
-            cur->next=prev;
-            
-            prev=cur;
-            cur=next;
-        }
+        ListNode* current = revList(p1, p2);
         
         a->next = p2;
-        p1->next=cur;
+        p1->next=current;
         
         if(a==dummyNode) return a->next;
         return head;
