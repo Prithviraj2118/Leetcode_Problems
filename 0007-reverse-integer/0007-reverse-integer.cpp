@@ -4,15 +4,18 @@ public:
         long reverse = 0, rem;
         bool f = false;
         if(x==-2147483648) return 0;
+        long n;
         
         if(x<0){
             f = true;
-            x = -x;
+            n = -x;
         }
-        while (x != 0) {
-            rem = x% 10;
+        else n=x;
+        
+        while (n != 0) {
+            rem = n% 10;
             reverse = reverse * 10 + rem;
-            x /= 10;
+            n /= 10;
         }
         if(reverse >= 2147483648) return 0;
         
