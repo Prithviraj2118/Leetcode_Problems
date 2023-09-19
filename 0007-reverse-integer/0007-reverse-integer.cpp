@@ -14,7 +14,7 @@ public:
             reverse = reverse * 10 + rem;
             x /= 10;
         }
-        if(reverse > 2147483648) return 0;
+        if(reverse >= 2147483648) return 0;
         
         if(f==true) return -reverse;
         return reverse;
