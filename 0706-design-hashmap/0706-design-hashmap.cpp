@@ -1,20 +1,21 @@
 class MyHashMap {
 public:
-    unordered_map<int, int> m;
+    vector<int> arr;
     MyHashMap() {
+        arr.resize(1000000+1, -1);
     }
     
     void put(int key, int value) {
-        m[key] = value;
+        arr[key] = value;
     }
     
     int get(int key) {
-        if(m.find(key)!=m.end()) return m[key];
+        if(arr[key]!=-1) return arr[key];
         return -1;
     }
     
     void remove(int key) {
-        if(m.find(key)!=m.end()) m.erase(key);
+        if(arr[key]!=-1) arr[key]=-1;
     }
 };
 
