@@ -12,7 +12,6 @@ public:
             cout << ch << endl;
 
         }
-        // reverse(ans.begin(), ans.begin()+ans.size());
         return num;
     }
 };
