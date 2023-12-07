@@ -10,9 +10,7 @@ public:
                 temp += num[j];
                 j++;
             }
-            if(temp.size()==3) {
-                maxi = max(maxi, temp);
-            }
+            if(temp.size()==3) maxi = max(maxi, temp);
             i=j;
         }
         return maxi;
