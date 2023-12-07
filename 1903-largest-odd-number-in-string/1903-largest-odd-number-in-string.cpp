@@ -2,16 +2,20 @@ class Solution {
 public:
     string largestOddNumber(string num) {
         int i=num.size()-1;
-        int ch=num[i]-48;
+        int ch;
+        bool flag=true;
+        string ans;
         
-        while(i>=0 && ch%2==0){
-            num.pop_back();
-            i--;
-            if(i<0) break;
+        while(i>=0){
             ch = int(num[i])-48;
-            cout << ch << endl;
-
-        }
-        return num;
+            if(ch%2==1 && flag==true){
+                ans += num[i];
+                flag = false;
+            }
+            else if(flag == false) ans += num[i];
+            i--;
+        }  
+        reverse(ans.begin(), ans.begin()+ans.size());
+        return ans;
     }
 };
