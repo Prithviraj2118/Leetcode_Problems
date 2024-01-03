@@ -1,8 +1,9 @@
 class DataStream {
 public:
-    map<int, int> m;
     int v, k1;
-    queue<int> q;
+    queue<int> q;   //To store last k integers
+    map<int, int> m;    //To check if last k integers are equal to value
+    
     DataStream(int value, int k) {
         v=value, k1=k;
     }
