@@ -12,12 +12,12 @@ public:
         
         int t1=0, t2, cnt=0;
         vector<string> ans;
-        for(auto &it: m){
-            vector<int> &time = it.second;
-            sort(time.begin(), time.end());
-            for(int i=2;i<time.size();i++){
-                if(time[i]-time[i-2] < 100){
-                    ans.push_back(it.first); 
+        for(auto x: m){
+            vector<int> temp = x.second;
+            sort(temp.begin(), temp.end());
+            for(int i=2;i<temp.size();i++){
+                if(temp[i]-temp[i-2] < 100){
+                    ans.push_back(x.first); 
                     break;
                 }
             }
