@@ -1,8 +1,8 @@
 class Solution {
 public:
     int solve(vector<int> &dp, int i, int n){
-        if(i==n-1) return 1;  //We reach nth step
-        else if(i==n-2) return 2;  //Out of bound
+        if(i==n) return 1;  //We reach nth step
+        else if(i>n) return 0;  //Out of bound
         
         if(dp[i] != -1) return dp[i];
         
