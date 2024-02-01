@@ -1,23 +1,21 @@
 class Solution {
 public:
     vector<vector<int>> divideArray(vector<int>& nums, int k) {
-        int size = nums.size();
-        if (size % 3 != 0)
-            return vector<vector<int>>();
-
+        vector<vector<int>> ans;
+        int i=0;
         sort(nums.begin(), nums.end());
-
-        vector<vector<int>> result(size / 3, vector<int>(3));
-        int groupIndex = 0;
-        for (int i = 0; i < size; i += 3) {
-            if (i + 2 < size && nums[i + 2] - nums[i] <= k) {
-                result[groupIndex] = { nums[i], nums[i + 1], nums[i + 2] };
-                groupIndex++;
+        vector<int> temp;
+        while(i<nums.size()-2){
+            temp.clear();
+            if(nums[i+2]-nums[i]>k) return {};
+            else{
+                temp.push_back(nums[i]);
+                temp.push_back(nums[i+1]);
+                temp.push_back(nums[i+2]);
             }
-            else {
-                return vector<vector<int>>();
-            }
+            i=i+3;
+            ans.push_back(temp);
         }
-        return result;
+        return ans;
     }
-}; 
+};
