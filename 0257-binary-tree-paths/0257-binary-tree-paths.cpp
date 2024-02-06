@@ -18,7 +18,6 @@ public:
         string s = to_string(root->val);
         solve(root->left, str+s+"->");
         solve(root->right, str+s+"->");
-        cout << str << endl;
         if(!root->left && !root->right) {
             s=to_string(root->val);
             str+=s;
