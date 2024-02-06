@@ -15,12 +15,11 @@ public:
     void solve(TreeNode* root, string str){
         if(!root) return;
         
-        string s = to_string(root->val);
-        solve(root->left, str+s+"->");
-        solve(root->right, str+s+"->");
-        if(!root->left && !root->right) {
-            s=to_string(root->val);
-            str+=s;
+        solve(root->left, str+ to_string(root->val) +"->");  //Add the node val and arrow in
+        solve(root->right, str+ to_string(root->val) +"->");  //string str
+        
+        if(!root->left && !root->right) {   //When leaf node, store string str in arr
+            str+=to_string(root->val);
             arr.push_back(str);
         }
     }
