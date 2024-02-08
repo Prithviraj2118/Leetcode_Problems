@@ -1,26 +1,24 @@
 class Solution {
 public:
-    int gg[10001];
-    long long solve(vector<int> &dp, int i, int target, int n){
-        if(target==n) return 0;
-        if(target>n) return 1e8;
+    int dp[10001];
+    int solve(int i, int n){
+        if(n==0) return 0;
+        if(n<0) return 1e8;
         
-        if(gg[target] != -1) return gg[target];
+        if(dp[n] != -1) return dp[n];
         int a=0, b=INT_MAX, c;
         for(int j=i; j*j<=n; j++){
             c=j*j;
-            a = 1 + solve(dp, j, target+c, n);
+            a = 1 + solve(j, n-c);
             b = min(b, a);
         }
-        return gg[target]=b;
+        return dp[n]=b;
     }
     int numSquares(int n) {
         if(n==1 || n==2 || n==3) return n;
-        memset(gg , -1 , sizeof(gg));
+        memset(dp , -1 , sizeof(dp));
 
-        vector<int> dp(n+1, -1);
-        int ans = solve(dp, 1, 0, n);
-        // if(ans>n/2) return -1;
+        int ans = solve(1, n);
         return ans;
     }
 };
