@@ -12,7 +12,7 @@ public:
         string ans;
         for(auto x:words){
             ans=x;
-            ans = solve(ans);
+            reverse(ans.begin(), ans.end());
             if(ans==x) return x;
         }
         return "";
