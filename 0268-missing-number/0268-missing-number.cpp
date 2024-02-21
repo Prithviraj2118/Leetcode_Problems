@@ -3,20 +3,12 @@ public:
     int missingNumber(vector<int>& nums) {
         
         //TC = O(N)
-        unordered_map<int, int> m;
-        
-        for(int i=0; i<nums.size(); i++)
-        {
-            m[nums[i]]++;
+        int n=nums.size();
+        int sum=0, expected_sum=(n*(n+1))/2;
+        for(auto x:nums){
+            sum+=x;
         }
-        
-        for(int i=0; i<nums.size(); i++)
-        {
-            if(m[i] == 0)
-                return i;
-        }
-        
-        return nums.size();
+        return expected_sum-sum;  //Missng number
         
         /*
         // TC = O(n)
