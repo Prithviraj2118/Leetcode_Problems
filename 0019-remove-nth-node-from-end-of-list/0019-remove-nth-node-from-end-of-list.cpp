@@ -9,22 +9,22 @@
  * };
  */
 
-int length(ListNode* head)
- {
-     ListNode* temp = head;
-     int l = 0;
-     
-     while(temp != NULL)
-     {
-         temp = temp->next;
-         l++;
-     }
-     
-     return l;
- }
-
 class Solution {
 public:
+    int length(ListNode* head)
+     {
+         ListNode* temp = head;
+         int l = 0;
+
+         while(temp != NULL)
+         {
+             temp = temp->next;
+             l++;
+         }
+
+         return l;
+     }
+
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         ListNode* temp=head;
         int len = length(head);
