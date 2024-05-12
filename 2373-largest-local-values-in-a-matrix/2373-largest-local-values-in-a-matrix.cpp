@@ -33,7 +33,6 @@ public:
                 for(int x=i;x<i+3;x++){
                     for(int y=j;y<j+3;y++){
                         mx=max(mx,grid[x][y]);
-                        cout<<grid[x][y]<<endl;
                     }
                 }
                 ans[i][j]=mx;
