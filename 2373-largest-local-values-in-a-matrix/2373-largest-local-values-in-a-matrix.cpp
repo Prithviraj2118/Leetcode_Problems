@@ -9,21 +9,13 @@ public:
                 int mx=0;
                 for(int x=i-1;x<=i+1;x++){
                     for(int y=j-1;y<=j+1;y++){
-                        
-                        //cout << x << " " << y << endl;
                         mx=max(mx,grid[x][y]);
                         
                     }
                     cout << endl;
                 }
-                
-                         // cout<<mx<<endl;
                 ans[i-1][j-1]=mx;
-                // cout << i << endl;
             }
-            
-                
-            
         }
         return ans;
     }
